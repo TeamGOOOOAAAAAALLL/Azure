@@ -74,7 +74,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GameListProcessor.cs" />
-    <Compile Include="Games.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="GameMonitor.cs" />
+    <Compile Include="LightNotifier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WorkerRole.cs" />
   </ItemGroup>

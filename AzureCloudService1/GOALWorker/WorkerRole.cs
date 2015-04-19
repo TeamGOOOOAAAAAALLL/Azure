@@ -1,3 +1,4 @@
+using System;
 using Microsoft.WindowsAzure.ServiceRuntime;
 using System.Diagnostics;
 using System.Net;
@@ -54,14 +55,14 @@ namespace GOALWorker
 
         private async Task RunAsync(CancellationToken cancellationToken)
         {
-            var gameRetriever = new GameListProcessor();
+            var gameProcessor = new GameListProcessor();
+            DateTime? lastRetrievedGameList = null;
             // TODO: Replace the following with your own logic.
             while (!cancellationToken.IsCancellationRequested)
             {
-
                 Trace.TraceInformation("Working");
-                gameRetriever.GetGames();
-                await Task.Delay(1000);
+                gameProcessor.CheckToStartGameMonitor();
+                await Task.Delay(60000);
             }
         }
     }
